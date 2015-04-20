@@ -4,7 +4,7 @@
 
 #ifndef GAMEGRAPH_H
 #define GAMEGRAPH_H
-
+#include <string>
 
 class GameGraph
 {
@@ -13,6 +13,9 @@ class GameGraph
         GameGraph();
         /** Default destructor */
         virtual ~GameGraph();
+        void addArea(std::string name);     //add area or location to map
+        void addPathToArea(std::string beginningArea, std::string endingArea);    //add path between two areas or locations
+        void lookAtMap(std::string currentArea);    //looks at map and prints all adjacent areas once can get to
     protected:
     private:
 };
