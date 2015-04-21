@@ -6,59 +6,100 @@
 {\colortbl
 \red0\green0\blue0;
 \red255\green255\blue255;
-\red255\green255\blue255;}
+\red255\green255\blue255;
+\red153\green204\blue0;
+\red0\green255\blue255;
+\red255\green0\blue255;
+\red255\green102\blue0;}
 {\stylesheet
-{\s6\fi-431\li720\sbasedon28\snext28 Contents 1;}
-{\s7\fi-431\li1440\sbasedon28\snext28 Contents 2;}
-{\s1\fi-431\li720 Arrowhead List;}
-{\s27\fi-431\li720\sbasedon28 Lower Roman List;}
+{\s6\fi-430\li720\sbasedon28\snext28 Contents 1;}
+{\s7\fi-430\li1440\sbasedon28\snext28 Contents 2;}
+{\s1\fi-430\li720 Arrowhead List;}
+{\s27\fi-430\li720\sbasedon28 Lower Roman List;}
 {\s29\tx431\sbasedon20\snext28 Numbered Heading 1;}
 {\s30\tx431\sbasedon21\snext28 Numbered Heading 2;}
-{\s12\fi-431\li720 Diamond List;}
-{\s9\fi-431\li2880\sbasedon28\snext28 Contents 4;}
-{\s8\fi-431\li2160\sbasedon28\snext28 Contents 3;}
+{\s12\fi-430\li720 Diamond List;}
+{\s9\fi-430\li2880\sbasedon28\snext28 Contents 4;}
+{\s8\fi-430\li2160\sbasedon28\snext28 Contents 3;}
 {\s31\tx431\sbasedon22\snext28 Numbered Heading 3;}
-{\s32\fi-431\li720 Numbered List;}
+{\s32\fi-430\li720 Numbered List;}
 {\s15\sbasedon28 Endnote Text;}
 {\*\cs14\fs20\super Endnote Reference;}
-{\s4\fi-431\li720 Bullet List;}
+{\s4\fi-430\li720 Bullet List;}
 {\s5\tx1584\sbasedon29\snext28 Chapter Heading;}
-{\s35\fi-431\li720 Square List;}
-{\s11\fi-431\li720 Dashed List;}
+{\s35\fi-430\li720 Square List;}
+{\s11\fi-430\li720 Dashed List;}
 {\s22\sb440\sa60\f1\fs24\b\sbasedon28\snext28 Heading 3;}
-{\s37\fi-431\li720 Tick List;}
-{\s24\fi-431\li720 Heart List;}
-{\s40\fi-431\li720\sbasedon32 Upper Roman List;}
-{\s39\fi-431\li720\sbasedon32 Upper Case List;}
+{\s37\fi-430\li720 Tick List;}
+{\s24\fi-430\li720 Heart List;}
+{\s40\fi-430\li720\sbasedon32 Upper Roman List;}
+{\s39\fi-430\li720\sbasedon32 Upper Case List;}
 {\s16\fi-288\li288\fs20\sbasedon28 Footnote;}
-{\s19\fi-431\li720 Hand List;}
+{\s19\fi-430\li720 Hand List;}
 {\s18\fs20\sbasedon28 Footnote Text;}
 {\s20\sb440\sa60\f1\fs34\b\sbasedon28\snext28 Heading 1;}
 {\s21\sb440\sa60\f1\fs28\b\sbasedon28\snext28 Heading 2;}
-{\s10\qc\sb240\sa120\f1\fs32\b\sbasedon28\snext28 Contents Header;}
+{\s10\qc\sb240\sa119\f1\fs32\b\sbasedon28\snext28 Contents Header;}
 {\s23\sb440\sa60\f1\fs24\b\sbasedon28\snext28 Heading 4;}
 {\s28\f0\fs24 Normal;}
-{\s26\fi-431\li720\sbasedon32 Lower Case List;}
-{\s2\li1440\ri1440\sa120\sbasedon28 Block Text;}
+{\s26\fi-430\li720\sbasedon32 Lower Case List;}
+{\s2\li1440\ri1440\sa119\sbasedon28 Block Text;}
 {\s33\f2\sbasedon28 Plain Text;}
 {\s34\tx1584\sbasedon29\snext28 Section Heading;}
-{\s25\fi-431\li720 Implies List;}
-{\s3\fi-431\li720 Box List;}
-{\s36\fi-431\li720 Star List;}
+{\s25\fi-430\li720 Implies List;}
+{\s3\fi-430\li720 Box List;}
+{\s36\fi-430\li720 Star List;}
 {\*\cs17\fs20\super Footnote Reference;}
-{\s38\fi-431\li720 Triangle List;}
+{\s38\fi-430\li720 Triangle List;}
 {\s13\fi-288\li288\sbasedon28 Endnote;}}
-\kerning0\cf0\ftnbj\fet2\ftnstart1\ftnnar\aftnnar\ftnstart1\aftnstart1\aenddoc\revprop3{\*\rdf}{\info\uc1{\author user}}\deftab720\viewkind1\paperw12240\paperh15840\margl1440\margr1440\widowctrl
+{\*\listtable
+{\list\listtemplateid1089{\listlevel\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li720{\leveltext\'01\u8226 ;}{\levelnumbers;}}{\listlevel\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li1440{\leveltext\'01\u8226 ;}{\levelnumbers;}}{\listlevel\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li2160{\leveltext\'01\u8226 ;}{\levelnumbers;}}{\listlevel\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li2880{\leveltext\'01\u8226 ;}{\levelnumbers;}}{\listlevel\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li720{\leveltext\'01\u8226 ;}{\levelnumbers;}}{\listlevel\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li720{\leveltext\'01\u8226 ;}{\levelnumbers;}}{\listlevel\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li720{\leveltext\'01\u8226 ;}{\levelnumbers;}}{\listlevel\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li720{\leveltext\'01\u8226 ;}{\levelnumbers;}}{\listlevel\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li720{\leveltext\'01\u8226 ;}{\levelnumbers;}}\listid1000}
+{\list\listtemplateid1090\listsimple{\listlevel\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li720{\leveltext\'01\u8226 ;}{\levelnumbers;}}\listid1068}}
+{\*\listoverridetable
+{\listoverride\listoverridecount0\listid1000\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li720{\leveltext\'01\u8226 ;}{\levelnumbers;}\ls1}
+{\listoverride\listoverridecount0\listid1000\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li1440{\leveltext\'01\u8226 ;}{\levelnumbers;}\ls2}
+{\listoverride\listoverridecount0\listid1000\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li2160{\leveltext\'01\u8226 ;}{\levelnumbers;}\ls3}
+{\listoverride\listoverridecount0\listid1000\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li2880{\leveltext\'01\u8226 ;}{\levelnumbers;}\ls4}
+{\listoverride\listoverridecount0\listid1068\levelnfc23\levelstartat0\levelspace0\levelfollow0\fi-431\li720{\leveltext\'01\u8226 ;}{\levelnumbers;}\ls5}}
+
+\kerning0\cf0\ftnbj\fet2\ftnstart1\ftnnar\aftnnar\ftnstart1\aftnstart1\aenddoc\revprop3{\*\rdf}{\info\uc1}\deftab720\viewkind1\paperw12240\paperh15840\margl1440\margr1440\widowctrl
 \sectd\sbknone\colsx360\pgncont\ltrsect
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\abinodiroverride\ltrch Game Basic Outline}{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\abinodiroverride\ltrch Interface}{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
-\pard\plain\ltrpar\ql\s28\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\abinodiroverride\ltrch Functionality}{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\abinodiroverride\ltrch Game Basic Outline}{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch A game where you can travel from area to area to gain skill points in order to defeat the final boss, but is time sensitive}{\s28\f0\fs24\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\abinodiroverride\ltrch Interface}{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1068\abilistparentid0\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls5\ilvl0\sl240\slmult1\itap0{\s28\cf3\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Display for time left}{\s28\f0\fs24\lang1033{\*\listtag0}, and also }{\s28\cf4\f0\fs24\lang1033{\*\listtag0}skill level}{\s28\f0\fs24\ul\lang1033{\*\listtag1069}\par}
+}{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1068\abilistparentid0\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls5\ilvl0\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Room title}{\s28\f0\fs24\lang1033{\*\listtag1088}\par}
+}{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1068\abilistparentid0\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls5\ilvl0\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Description of the current room}{\s28\f0\fs24\lang1033{\*\listtag1070}\par}
+}{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1068\abilistparentid0\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls5\ilvl0\sl240\slmult1\itap0{\s28\cf5\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Action you can do}{\s28\f0\fs24\lang1033{\*\listtag1071}\par}
+}{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1068\abilistparentid0\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls5\ilvl0\sl240\slmult1\itap0{\s28\cf6\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Number of steps you are from the boss (only when boss is close, say less than 2 nodes)}{\s28\f0\fs24\lang1033{\*\listtag1082}\par}
+}\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\abinodiroverride\ltrch Functionality}{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch - The map is structured with each area, called \uc1\u8220\'93rooms\uc1\u8221\'94 as a vertex in the graph, and the edges are what connect these spaces to other spaces.}{\s28\f0\fs24\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch - Each of these edges are connected through an adjacent vertex vector}{\s28\f0\fs24\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch - }{\s28\cf5\f0\fs24\lang1033{\*\listtag0}The player will move through rooms and gain }{\s28\cf4\f0\fs24\lang1033{\*\listtag0}experience points}{\s28\cf5\f0\fs24\lang1033{\*\listtag0} by doing something in each room.}{\s28\f0\fs24\lang1033{\*\listtag0} Each time they, say, slay a dragon, they will have used up a unit of time going from room to room.}{\s28\f0\fs24\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch - The program will have one room where the boss will be, and that room will be added as an adjacent vertex to a random room, saying \uc1\u8216\'91The boss is nearby. Are you ready to fight? If so, type f\uc1\u8221\'94 Now, before this, you will have calculated the shortest node path to the boss, multiplied it by 4 or something to figure out a}{\s28\cf3\f0\fs24\lang1033{\*\listtag0} reasonable time limit (room traversals)}{\s28\f0\fs24\lang1033{\*\listtag0} that the player has before the mission is failed. This adds a dual conflict of gaining experience points, but only before time runs out. }{\s28\cf6\f0\fs24\lang1033{\*\listtag0}You could even have a number be displayed that shows how many steps away the boss is (running the shortest path algorithm each time)}{\s28\f0\fs24\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch - Advanced (and very optional): A game mode that randomizes the connections to rooms in the graph, making the map randomly generated each time.}{\s28\f0\fs24\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\par}
+\pard\plain\ltrpar\ql\s28\sl240\slmult1\itap0{\s28\f0\fs24\ul\lang1033{\*\listtag0}\abinodiroverride\ltrch Actual functions}{\s28\f0\fs24\ul\lang1033{\*\listtag0}\par}
+{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1000\abilistparentid0\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls1\ilvl0\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch A file read function that reads a text file, building a space and attaching its edges.}{\s28\f0\fs24\lang1033{\*\listtag1001}\par}
+}{\listtext\pard\fi-431\li1440\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li1440\s28{\*\abilist\abilistid1003\abilistparentid1000\abilistlevel2\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls2\ilvl1\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch The }{\s28\f0\fs24\b\lang1033{\*\listtag0}input file}{\s28\f0\fs24\lang1033{\*\listtag0} will most likely consist of (for each room):}{\s28\f0\fs24\lang1033{\*\listtag1002}\par}
+}{\listtext\pard\fi-431\li2160\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li2160\s28{\*\abilist\abilistid1005\abilistparentid1003\abilistlevel3\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls3\ilvl2\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch A room title}{\s28\f0\fs24\lang1033{\*\listtag1004}\par}
+}{\listtext\pard\fi-431\li2160\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li2160\s28{\*\abilist\abilistid1005\abilistparentid1003\abilistlevel3\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls3\ilvl2\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch A room description that will be printed when the user enters the room}{\s28\f0\fs24\lang1033{\*\listtag1006}\par}
+}{\listtext\pard\fi-431\li2160\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li2160\s28{\*\abilist\abilistid1005\abilistparentid1003\abilistlevel3\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls3\ilvl2\sl240\slmult1\itap0{\s28\cf4\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Skill points you can gather by doing actions in the room??}{\s28\f0\fs24\lang1033{\*\listtag1067}\par}
+}{\listtext\pard\fi-431\li2160\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li2160\s28{\*\abilist\abilistid1005\abilistparentid1003\abilistlevel3\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls3\ilvl2\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Rooms that are adjacent(connected) to the room. }{\s28\f0\fs24\lang1033{\*\listtag0}For each adjacent room in the vector:}{\s28\f0\fs24\lang1033{\*\listtag1007}\par}
+}{\listtext\pard\fi-431\li2880\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li2880\s28{\*\abilist\abilistid1009\abilistparentid1005\abilistlevel4\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls4\ilvl3\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch An \uc1\u8220\'93adjacent description\uc1\u8221\'94 will be associated, like \uc1\u8220\'93Type s to go to the swamp\uc1\u8221\'94 that will print when looping through adjacent vertices}{\s28\f0\fs24\lang1033{\*\listtag1008}\par}
+}{\listtext\pard\fi-431\li2880\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li2880\s28{\*\abilist\abilistid1009\abilistparentid1005\abilistlevel4\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls4\ilvl3\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch A char variable of which letter should be typed (\uc1\u8220\'93s\uc1\u8221\'94) - (the user will be asked for an input, and a for loop will compare to each in the adjVertex vector, then change the user\uc1\u8217\'92s current room to the selected one)}{\s28\f0\fs24\lang1033{\*\listtag1010}\par}
+}{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1000\abilistparentid1005\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls1\ilvl0\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Add vertex with description (a}{\s28\f0\fs24\i\lang1033{\*\listtag0}ddArea}{\s28\f0\fs24\lang1033{\*\listtag0})}{\s28\f0\fs24\lang1033{\*\listtag1072}\par}
+}{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1000\abilistparentid1005\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls1\ilvl0\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Add edges (}{\s28\f0\fs24\i\lang1033{\*\listtag0}addPathToArea}{\s28\f0\fs24\lang1033{\*\listtag0})}{\s28\f0\fs24\lang1033{\*\listtag1073}\par}
+}{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1000\abilistparentid1005\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls1\ilvl0\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Print function for each move (}{\s28\f0\fs24\i\lang1033{\*\listtag0}lookAtMap}{\s28\f0\fs24\lang1033{\*\listtag0})}{\s28\f0\fs24\lang1033{\*\listtag1074}\par}
+}{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1000\abilistparentid1005\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls1\ilvl0\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Shortest path calculator - BFtraversal}{\s28\f0\fs24\lang1033{\*\listtag1075}\par}
+}{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1000\abilistparentid1005\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls1\ilvl0\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Add  random room (attach the boss node to a random vertex)}{\s28\f0\fs24\lang1033{\*\listtag1076}\par}
+}{\listtext\pard\fi-431\li720\bullet 	}\pard\plain{\ltrpar\ql\fi-431\li720\s28{\*\abilist\abilistid1000\abilistparentid1005\abilistlevel1\abistartat0{\abifieldfont NULL}{\abilistdecimal .}{\abilistdelim %L}{\abiliststyle Bullet List}}{\*\pn\pnql\pnstart0\pnlvlblt{\pntxtb\bullet}}\ls1\ilvl0\sl240\slmult1\itap0{\s28\f0\fs24\lang1033{\*\listtag0}\abinodiroverride\ltrch Level up (update skill level variable using vertex skill information)}{\s28\f0\fs24\lang1033{\*\listtag1077}\par}}}

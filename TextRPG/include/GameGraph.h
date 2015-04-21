@@ -5,6 +5,22 @@
 #ifndef GAMEGRAPH_H
 #define GAMEGRAPH_H
 #include <string>
+#include <vector>
+
+struct adjRoom;
+
+struct room{
+    std::string title;
+    std::string description;
+    int skill; // Skill points
+    std::vector<adjRoom> adj; // Adjacent room vector
+};
+
+struct adjRoom{
+    room * r;
+    std::string description; // Adjacency description, not to be confused with regular description
+    char action; // Character you type to move into the room
+};
 
 class GameGraph
 {
