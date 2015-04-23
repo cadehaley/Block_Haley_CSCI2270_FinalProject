@@ -31,9 +31,11 @@ class GameGraph
         virtual ~GameGraph();
         void addArea(std::string name);     //add area or location to map
         void addPathToArea(std::string beginningArea, std::string endingArea);    //add path between two areas or locations
-        void lookAtMap(std::string currentArea);    //looks at map and prints all adjacent areas once can get to
+        void lookAtMap(room *currentLocation);    //looks at map and prints all adjacent areas one can get to
     protected:
     private:
+        room *currentLocation; //player location pointer
+        std::vector<room> areas; //vector containing all areas
 };
 
 #endif // GAMEGRAPH_H
