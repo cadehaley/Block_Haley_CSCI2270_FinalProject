@@ -12,8 +12,15 @@ struct adjRoom;
 struct room{
     std::string title;
     std::string description;
+    bool visited;
     int skill; // Skill points
     std::vector<adjRoom> adj; // Adjacent room vector
+};
+
+struct routeToLocation  //struct for traversal method (shortestRouteToDestination)
+{
+    int distance;
+    std::vector<room> path;
 };
 
 struct adjRoom{
@@ -32,6 +39,7 @@ class GameGraph
         void addArea(std::string name);     //add area or location to map
         void addPathToArea(std::string beginningArea, std::string endingArea);    //add path between two areas or locations
         void lookAtMap(room *currentLocation);    //looks at map and prints all adjacent areas one can get to
+        routeToLocation shortestRouteToDestination(std::string currentArea, std::string endLocation);    //shortest path between current location and boss
     protected:
     private:
         room *currentLocation; //player location pointer

@@ -4,6 +4,7 @@
 
 #include "GameGraph.h"
 #include <iostream>
+#include <queue>
 
 using namespace std;
 
@@ -87,4 +88,56 @@ void GameGraph::lookAtMap(room *currentLocation)
     {
         std::cout << currentLocation->adj[i].r->title << std::endl;
     }
+}
+
+/*
+    routeToLocation shortestRouteToDestination(string startingArea, string endLocation)
+    Method calculates the shortest unweighted distance between the starting area and end location
+    ex. shortestRouteToDestination("Forest", "Graveyard")
+    Pre-conditions: instance of graph, at least two different areas
+    Post-conditions: return shortest path between starting area and end location
+*/
+routeToLocation GameGraph::shortestRouteToDestination(std::string startArea, std::string endLocation)
+{
+    room areaCheck;
+    for (int i = 0; i < areas.size(); i++) //loop through areas, setting visited to false
+    {
+        areas[i].visited = false;
+        if (areas[i].title == startArea)
+        {
+            areaCheck = areas[i];
+        }
+    }
+    areaCheck.visited = true;
+    routeToLocation currentPath;
+    currentPath.distance = 0;
+    currentPath.path.push_back(areaCheck);
+    std::queue<routeToLocation> pathQueue; //set up queue to store paths taken
+    pathQueue.push(currentPath);
+    while (!pathQueue.empty())
+    {
+        currentPath = pathQueue.front(); //look at current path taken
+        pathQueue.pop();
+        room roomCheck = currentPath.path.back();
+        for (int i = 0; i < roomCheck.adj.size(); i++) //look at all adjacent areas to last area in current path
+        {
+            if (roomCheck.adj[i].r->visited == false)
+            {
+                routeToLocation newRoute;
+                newRoute.path = currentPath.path;
+                newRoute.distance = currentPath.distance;
+                newRoute.path.push_back(*roomCheck.adj[i].r); //add area to path
+                newRoute.distance++;
+                if (roomCheck.adj[i].r->title == endLocation) //return once destination found
+                {
+                    return newRoute;
+                }
+                else
+                {
+                    pathQueue.push(newRoute); //add new path to queue
+                }
+            }
+        }
+    }
+    return currentPath;
 }
