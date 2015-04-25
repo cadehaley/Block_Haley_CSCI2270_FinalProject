@@ -179,7 +179,7 @@ bool GameGraph::addArea(std::string name)
 }
 
 /*
-    void addPathToArea(string startingArea, string endingArea, string description, string key) - returns true if path added
+    bool addPathToArea(string startingArea, string endingArea, string description, string key) - returns true if path added
     Method connects two areas with an edge
     ex. addPathToArea("Forest", "Mountains", "Press m to go to the mountains.", "m")
     Pre-conditions: at least two different areas, an instance of the graph
@@ -258,20 +258,15 @@ void GameGraph::lookAtMap()
     Pre-conditions: instance of graph, at least two different areas
     Post-conditions: return shortest path between starting area and end location
 */
-
-// !!!!!!NOTE - This function needs to be changed to work with the recent
-//              change from vector<room> to vector<room*> in "areas".
-//              This will mostly be replacements from "areas[i].visited" to "areas[i]->visited"
-/*
 routeToLocation GameGraph::shortestRouteToDestination(std::string startArea, std::string endLocation)
 {
     room areaCheck;
     for (int i = 0; i < areas.size(); i++) //loop through areas, setting visited to false
     {
-        areas[i].visited = false;
-        if (areas[i].title == startArea)
+        areas[i]->visited = false;
+        if (areas[i]->title == startArea)
         {
-            areaCheck = areas[i];
+            areaCheck = *areas[i];
         }
     }
     areaCheck.visited = true;
@@ -307,7 +302,6 @@ routeToLocation GameGraph::shortestRouteToDestination(std::string startArea, std
     }
     return currentPath;
 }
-*/
 
 /*
     void movePlayer(string input)
@@ -333,6 +327,10 @@ void GameGraph::movePlayer(string input){
             }
         // Update time limit
         timeleft -= 1;
+    }
+    if (timeleft == 0)
+    {
+        quit = true;
     }
 }
 
