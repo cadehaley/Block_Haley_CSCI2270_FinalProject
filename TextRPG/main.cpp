@@ -21,7 +21,7 @@ int main(int argc, const char * argv[]) {
 
     GameGraph g; // Establish GameGraph object
     string filename = argv[1];
-    int input;
+    string userInput;
     char letter_input;
     bool graph_built = false;
     bool quit = false;
@@ -29,10 +29,8 @@ int main(int argc, const char * argv[]) {
     while (!quit){ // Main menu
         clearscreen();
         displayMenu();
-        cin >> input;
-        cin.clear();
-        cin.ignore(10000,'\n');
-        switch(input){
+        getline(cin, userInput);
+        switch(stoi(userInput)){
             case 1: // Build the map
                 if (!graph_built){
                     clearscreen();
@@ -76,6 +74,7 @@ int main(int argc, const char * argv[]) {
                             cout << "Go back? y/n " << endl;
                             cin >> letter_input;
                         }
+                        cin.ignore(10000, '\n');
                         break;
                     default:
                         break;
@@ -95,6 +94,7 @@ int main(int argc, const char * argv[]) {
 
         }
     }
+    g.~GameGraph();
     return 0;
 }
 

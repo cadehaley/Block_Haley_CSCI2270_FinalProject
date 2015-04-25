@@ -21,7 +21,7 @@ GameGraph::GameGraph()
 
 GameGraph::~GameGraph()
 {
-    //dtor
+    //freeing up memory causes seg fault?
 }
 
 /*
@@ -244,7 +244,7 @@ void GameGraph::lookAtMap()
     }
     // Display skill and time remaining
     cout << "                           " << "Time remaining: " << timeleft << "    Skill: " << skill << endl;
-    cin >> input;
+    getline(cin,input);
     if (input != "q")
         movePlayer(input);
     else

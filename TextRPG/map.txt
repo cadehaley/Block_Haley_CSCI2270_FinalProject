@@ -13,14 +13,14 @@
 #
 
 @@
-Front gates
-You begin at the gates of a town, looking out towards a forest.
+South gates
+You are at the south gates of Nordsjaelland, looking at the vast Zeljeznicar Forest.
 0
 ---
 s
 &&
-Town
-Type n to go north, back into the town
+Nordsjaelland
+Type n to go north, back into town
 n
 &&
 Forest
@@ -30,25 +30,179 @@ s
 
 @@
 Forest
-You are now in a forest.
+You are now in the forest.
 20
 You gain experience in navigating your way through the woods. Hooray!
 0
 &&
-Front gates
-Type n to go back to the entrance of the city
+South gates
+Type n to go back to the south gates
 n
 
 
 @@
-Town
-You are in the town.
+Nordsjaelland
+You are in Nordsjaelland.
 10
 You brush up on your pickpocketing skills in order to pay for some food
 0
 &&
-Front gates
-Type s to go back to the entrance of the city
+South gates
+Type s to go back to the south gates
+s
+&&
+North gates
+Type n to go to the north gates
+n
+&&
+West gates
+Type w to go to the west gates
+w
+
+
+@@
+North gates
+You are at the north gates, looking out on the Atvidabergs mountain range.
+0
+---
+0
+&&
+Mountain
+Type n to go north into the mountains
+n
+&&
+Mine
+Type e to go east into the silver mine
+e
+&&
+Nordsjaelland
+Type s to go back into town
 s
 
 
+@@
+West gates
+You are at the west gates, looking across acres of farmland.
+0
+---
+0
+&&
+Farm
+Type w to explore the farmland.
+w
+&&
+Nordsjaelland
+Type e to go back into town.
+e
+&&
+River
+Type s to go south to the Syrianska River.
+s
+&&
+Cave
+Type n to go north into the Cave of Brommapojkarna.
+n
+
+
+@@
+Farm
+You are in the farmland.
+30
+You help a lone farmer slaughter several pigs, and you are now covered in their blood.
+0
+&&
+West gates
+Type e to go back to the west gates of town.
+e
+&&
+Well
+Type w to go clean yourself off at the well.
+w
+&&
+River
+Type s to go south to the Syrianska river.
+s
+&&
+Cave
+Type n to go north into the Cave of Brommapojkarna.
+n
+
+
+@@
+Mine
+You are in the silver mine.
+40
+You take up a pickaxe and help mine for silver. You now possess a godly physique.
+0
+&&
+North gates
+Type w to go back to the north gates.
+w
+&&
+Mountain
+Type n to go north into the Atvidabergs mountains.
+n
+
+
+@@
+Mountain
+You are in the mountains.
+30
+You brave the treacherous terrain in a successful search for rare berries to be used for bartering.
+0
+&&
+North gates
+Type s to go back to the north gates of town.
+s
+&&
+Mine
+Type e to go east to the silver mine.
+e
+&&
+Cave
+Type w to go west to the Cave of Brommapojkarna.
+w
+
+
+@@
+Cave
+You are in the Cave of Brommapojkarna.
+60
+You stumble upon the necromancer Brommapojkarna naked. Ew. Brommapojkarna pays you a handsome sum to refrain from explaining this embarassing sight to the villagers.
+0
+&&
+Mountain
+Type e to go back into the mountains.
+e
+&&
+Farm
+Type w to go southwest to the farmlands.
+w
+&&
+West gates
+Type e to go southeast to the west gates of Nordsjaelland.
+e
+
+
+@@
+River
+You are at the banks of the river.
+40
+You do some stuff for experience.
+0
+&&
+Farm
+Type w to go northwest to the farmlands.
+w
+&&
+West gates
+Type e to go northeast to the west gates of Nordsjaelland.
+e
+
+
+@@
+Well
+You are at the well.
+31
+You fight the boss and win.
+b
