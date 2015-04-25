@@ -1,0 +1,54 @@
+# This map file consists of (in this order, starting with a double 'at' sign each time):
+#   @@
+#   Title
+#   Printed description
+#   Skill points earned when doing an action
+#   Action description
+#   Room type (s for starting room, b for boss room, 0 for regular) [The boss room should not have any adjacent vertices associated]
+# and for each new adjacent room:
+#   &&
+#   Title of the adjacent room
+#   Adjacency Description to be printed, e.g. ("Press W to go West")
+#   Single character to be typed
+#
+
+@@
+Front gates
+You begin at the gates of a town, looking out towards a forest.
+0
+---
+s
+&&
+Town
+Type n to go north, back into the town
+n
+&&
+Forest
+Type s to go into the forest
+s
+
+
+@@
+Forest
+You are now in a forest.
+20
+You gain experience in navigating your way through the woods. Hooray!
+0
+&&
+Front gates
+Type n to go back to the entrance of the city
+n
+
+
+@@
+Town
+You are in the town.
+10
+You brush up on your pickpocketing skills in order to pay for some food
+0
+&&
+Front gates
+Type s to go back to the entrance of the city
+s
+
+
