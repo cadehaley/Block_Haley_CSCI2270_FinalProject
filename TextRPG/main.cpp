@@ -94,7 +94,6 @@ int main(int argc, const char * argv[]) {
 
         }
     }
-    g.~GameGraph();
     return 0;
 }
 

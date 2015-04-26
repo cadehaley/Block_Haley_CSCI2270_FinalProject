@@ -20,11 +20,11 @@ You are at the south gates of Nordsjaelland, looking at the vast Zeljeznicar For
 s
 &&
 Nordsjaelland
-Type n to go north, back into town
+Type n to go north into town
 n
 &&
 Forest
-Type s to go into the forest
+Type s to go south into the forest
 s
 
 
@@ -152,7 +152,7 @@ You brave the treacherous terrain in a successful search for rare berries to be 
 0
 &&
 North gates
-Type s to go back to the north gates of town.
+Type s to go south to the north gates of town.
 s
 &&
 Mine
@@ -160,7 +160,7 @@ Type e to go east to the silver mine.
 e
 &&
 Cave
-Type w to go west to the Cave of Brommapojkarna.
+Type w to go southwest to the Cave of Brommapojkarna.
 w
 
 
@@ -172,8 +172,8 @@ You stumble upon the necromancer Brommapojkarna naked. Ew. Brommapojkarna pays y
 0
 &&
 Mountain
-Type e to go back into the mountains.
-e
+Type n to go northwest into the mountains.
+n
 &&
 Farm
 Type w to go southwest to the farmlands.

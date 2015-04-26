@@ -51,6 +51,7 @@ class GameGraph
         void lookAtMap();    //looks at map and prints all adjacent areas one can get to
         routeToLocation shortestRouteToDestination(std::string currentArea, std::string endLocation);    //shortest path between current location and boss
         void movePlayer(std::string input); // TBD, changes current location and marks vertex as visited
+        void endGameSequences();
 
         // Public variables
         bool quit; // Set to true if the player wants to quit

@@ -21,7 +21,7 @@ GameGraph::GameGraph()
 
 GameGraph::~GameGraph()
 {
-    //freeing up memory causes seg fault?
+    //running any destructor, even an empty one, causes the driver to core dump at the end
 }
 
 /*
@@ -244,11 +244,15 @@ void GameGraph::lookAtMap()
     }
     // Display skill and time remaining
     cout << "                           " << "Time remaining: " << timeleft << "    Skill: " << skill << endl;
-    getline(cin,input);
-    if (input != "q")
-        movePlayer(input);
-    else
-        quit = true;
+    endGameSequences();
+    if (!quit)
+    {
+        getline(cin,input);
+        if (input != "q")
+            movePlayer(input);
+        else
+            quit = true;
+    }
 }
 
 /*
@@ -328,10 +332,6 @@ void GameGraph::movePlayer(string input){
         // Update time limit
         timeleft -= 1;
     }
-    if (timeleft == 0)
-    {
-        quit = true;
-    }
 }
 
 /*
@@ -352,3 +352,46 @@ void GameGraph::connectRemainingPaths(){
             cout << "   Unable to connect edge: " << unconnected[i].starting << " -> " << unconnected[i].destination << endl;
     }
 }
+
+/*
+    void endGameSequences();
+    Prints the correct statement for the given end game scenarios
+    ex. endGameSequences();
+    Pre-conditions: instance of graph, boss room and time limit have been set
+    Post-conditions: returns player to the main menu
+*/
+void GameGraph::endGameSequences()
+{
+    if (timeleft == 0)
+    {
+        quit = true;
+        if (currentLocation->title == "Well") //no time left and reached the boss room
+        {
+            cout << "Congratulations! You beat the game!" << endl;
+            cout << "Press any key to return to the main menu" << endl;
+            cin.get();
+        }
+        else //run out of time and haven't found the boss
+        {
+            cout << "You have run out of time." << endl;
+            cout << "YOU SUCK! Try again." << endl;
+            cout << "Press any key to return to the main menu, loser" << endl;
+            cin.get();
+        }
+    }
+    if (currentLocation->title == "Well")
+    {
+        quit = true;
+        cout << "Congratulations! You beat the game!" << endl;
+        cout << "Press any key to return to the main menu" << endl;
+        cin.get();
+    }
+}
+
+/*
+{
+    routeToLocation routeToBoss;
+    routeToBoss = shortestRouteToDestination("Nordsjaelland", "Well");
+
+}
+*/
