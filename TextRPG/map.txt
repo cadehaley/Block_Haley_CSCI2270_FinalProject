@@ -4,7 +4,7 @@
 #   Printed description
 #   Skill points earned when doing an action
 #   Action description
-#   Room type (s for starting room, b for boss room, 0 for regular) [The boss room should not have any adjacent vertices associated]
+#   Room type (s for starting room, b for boss room, 0 for regular) [The boss room should have no adjacent areas]
 # and for each new adjacent room:
 #   &&
 #   Title of the adjacent room
@@ -14,9 +14,9 @@
 
 @@
 South gates
-You are at the south gates of Nordsjaelland, looking at the vast Zeljeznicar Forest.
+You are at the south gates of Nordsjaelland, looking at the vast Zeljeznicar forest.
 0
----
+You've decided to go on a quest to find and destroy an illusive creature, a spirit, which has been threatening Nordsjaelland. Villagers have told you not to approach it unless you have acquired the skills to defeat it-- however, you only have several days before they fear it will come back. It would be wise to plot your journey carefully...
 s
 &&
 Nordsjaelland
@@ -130,7 +130,7 @@ n
 
 @@
 Mine
-You are in the silver mine.
+You are now in a silver mine.
 40
 You take up a pickaxe and help mine for silver. You now possess a godly physique.
 0
@@ -168,7 +168,7 @@ w
 Cave
 You are in the Cave of Brommapojkarna.
 60
-You stumble upon the necromancer Brommapojkarna naked. Ew. Brommapojkarna pays you a handsome sum to refrain from explaining this embarassing sight to the villagers.
+You stumble upon the necromancer Brommapojkarna naked. Ew. Perhaps you should've knocked first, but then again it IS a cave. Brommapojkarna pays you a handsome sum to refrain from explaining this embarassing sight to the villagers.
 0
 &&
 Mountain
@@ -186,10 +186,14 @@ e
 
 @@
 River
-You are at the banks of the river.
+You are at the banks of a river.
 40
-You do some stuff for experience.
+The night is setting and you fashion a fishing net to try and catch fish and feed yourself. Your luck turns and you manage to catch a few, and as you walk away you catch a faint glow underneath the water and watch as it recedes dozens of feet underneath the surface and into a cave.
 0
+&&
+Mine
+Type 'follow' to dive under the waters and see where the cave leads.
+follow
 &&
 Farm
 Type w to go northwest to the farmlands.
@@ -202,7 +206,32 @@ e
 
 @@
 Well
-You are at the well.
-31
-You fight the boss and win.
+You are at the well. You stare into its depths, hoping to summon from the depths what you believe to be the cause of the frightful sound heard from miles away.
+0
+You ready a dagger and prepare to face the monster, hoping that your training has served you well.
 b
+
+#############
+# Success and failure endings
+
+@@
+Success
+You defeat the monster!!
+300
+You Win. GAME OVER
+0
+
+
+@@
+Defeat
+The monster beats you
+-100
+You lay on the ground, unable to move, and watch as the spirit slithers away towards the town. A nearby farmer witnesses this and manages to take you to a safe place, however you must one day face the village you once knew, walking through the south gates and catching a glimpse of a person bravely embarking on a quest to the forest to finally settle this. GAME OVER
+0
+
+
+@@
+Timeout
+You hear a distant screech and fear it is too late
+-100
+GAME OVER
