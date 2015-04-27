@@ -21,7 +21,8 @@ GameGraph::GameGraph()
 
 GameGraph::~GameGraph()
 {
-    //running any destructor, even an empty one, causes the driver to core dump at the end
+    delete currentLocation;
+    areas.clear();
 }
 
 /*
@@ -247,6 +248,7 @@ void GameGraph::lookAtMap()
     endGameSequences();
     if (!quit)
     {
+        howFarToBoss();
         getline(cin,input);
         if (input != "q")
             movePlayer(input);
@@ -389,9 +391,25 @@ void GameGraph::endGameSequences()
 }
 
 /*
+    void howFarToBoss()
+    Calculates how far it is from player's current location to the boss
+    Pre-conditions: boss room set, currentLocation is known
+    Post-conditions: distance to boss printed if player is close enough
+*/
+void GameGraph::howFarToBoss()
 {
     routeToLocation routeToBoss;
-    routeToBoss = shortestRouteToDestination("Nordsjaelland", "Well");
-
+    routeToBoss = shortestRouteToDestination(currentLocation->title, "Well");
+    if (routeToBoss.distance < 3)
+    {
+        cout << "                           " << "Boss is " << routeToBoss.distance;
+        if (routeToBoss.distance ==1)
+        {
+            cout << " move away." << endl;
+        }
+        else
+        {
+            cout << " moves away." << endl;
+        }
+    }
 }
-*/
