@@ -11,6 +11,7 @@
 #   Adjacency Description to be printed, e.g. ("Press W to go West")
 #   Single character to be typed
 #
+#   At the end of the file exists SUCCESS, DEFEAT, and TIMEOUT statements for the boss battle and time limit. Don't change these titles.
 
 @@
 South gates
@@ -216,7 +217,7 @@ b
 
 @@
 Success
-You defeat the monster!!
+Using all the might and skill you can muster, you swing your sword with the strength of 1000 axe throws, navigating your way around its every move and finally silence it with a blade slice of the utmost precision, like that of an experienced farmer. You defeat the monster!! Your initial look of terror, similar to that when leaving the necromancer's cave, is now a sweet grin of victory.
 300
 You Win. GAME OVER
 0
@@ -232,6 +233,6 @@ You lay on the ground, unable to move, and watch as the spirit slithers away tow
 
 @@
 Timeout
-You hear a distant screech and fear it is too late
+You hear a distant screech and fear it is too late. You've run out of time.
 -100
 GAME OVER

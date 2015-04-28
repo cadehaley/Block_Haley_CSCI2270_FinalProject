@@ -7,6 +7,7 @@
 #include <queue>
 #include <fstream>
 #include <sstream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -16,7 +17,13 @@ GameGraph::GameGraph()
     skill = 0;
     currentLocation = NULL;
     quit = false;
-    timeleft = 10; // Time limit for room traversals
+
+    timeleft = 20; // Time limit for room traversals
+    skill_threshold = 200; // The skill level that must be reached in order to defeat the boss
+
+    boss_room_random = false;
+    bossroom = NULL;
+    ending_called = false;
 }
 
 GameGraph::~GameGraph()
@@ -40,7 +47,6 @@ void GameGraph::readAndBuild(string filename){
 
     bool duplicate_found = false;
     int numberize = 0;
-    room * bossroom = NULL; // Boss room as the index in the vector
 	// Infile Modes, for telling if a line is
 	bool adding_adjacent = false;
 	bool adjacent_added = false;
@@ -133,11 +139,16 @@ void GameGraph::readAndBuild(string filename){
 		}
         else
             cout << "Starting room:  " << currentLocation->title << endl;
-		// Attach the boss room
-		if (bossroom != NULL){
 
+		// Attach the boss room
+		if (bossroom != NULL && boss_room_random){
+            cout <<"    ... Assigning boss room RANDOMLY..." << endl;
+            int randindex = rand() % areas.size();
+            string boss_desc = "Your final enemy is very near, at the " + areas[randindex]->title + ". If you are ready to fight, type 'boss'";
+            string boss_key = "boss";
+            addPathToArea(areas[randindex]->title, bossroom->title, boss_desc, boss_key);
 		}
-		else{
+		if (bossroom == NULL){
             cout << "Warning: No boss room found in file" << endl;
             bossroom = areas[areas.size()-1];
 		}
@@ -232,6 +243,8 @@ void GameGraph::lookAtMap()
 {
     string input;
 
+
+
     cout << currentLocation->description << " ";
     if (!currentLocation->action_done){
         cout << currentLocation->action << endl;
@@ -239,6 +252,14 @@ void GameGraph::lookAtMap()
     }
     else
         cout << endl;
+
+    if (ending_called){
+        cout << "\nPress any key to continue" << endl;
+        cin.get();
+        quit = true;
+        return;
+    }
+
     for (int i = 0; i < currentLocation->adj.size(); i++)
     {
         std::cout << currentLocation->adj[i].description << std::endl;
@@ -246,7 +267,7 @@ void GameGraph::lookAtMap()
     // Display skill and time remaining
     cout << "                           " << "Time remaining: " << timeleft << "    Skill: " << skill << endl;
     endGameSequences();
-    if (!quit)
+    if (!quit && !ending_called)
     {
         howFarToBoss();
         getline(cin,input);
@@ -364,29 +385,54 @@ void GameGraph::connectRemainingPaths(){
 */
 void GameGraph::endGameSequences()
 {
+    room * success = NULL;
+    room * defeat = NULL;
+    room * timeout = NULL;
+
+    // Attach pointers to the 3 scenarios
+    for (int i = 0; i<areas.size(); i++){
+        if (areas[i]->title == "Success")
+            success = areas[i];
+        if (areas[i]->title == "Defeat")
+            defeat = areas[i];
+        if (areas[i]->title == "Timeout")
+            timeout = areas[i];
+    }
+    // Error checking
+    if (success == NULL || defeat == NULL || timeout == NULL){
+        cout << "WARNING: Your game is hella broken (one or more of your ending scenarios is missing), so by default, you win." << endl;
+        quit = true;
+        return;
+    }
+
     if (timeleft == 0)
     {
-        quit = true;
-        if (currentLocation->title == "Well") //no time left and reached the boss room
+        ending_called = true;
+        if (currentLocation == bossroom) //no time left and reached the boss room
         {
-            cout << "Congratulations! You beat the game!" << endl;
-            cout << "Press any key to return to the main menu" << endl;
-            cin.get();
+            // Wait for second 'if' in this function
         }
         else //run out of time and haven't found the boss
         {
-            cout << "You have run out of time." << endl;
-            cout << "YOU SUCK! Try again." << endl;
-            cout << "Press any key to return to the main menu, loser" << endl;
-            cin.get();
+            currentLocation = timeout;
         }
     }
-    if (currentLocation->title == "Well")
+    if (currentLocation == bossroom) // Win or lose sequences
     {
-        quit = true;
-        cout << "Congratulations! You beat the game!" << endl;
-        cout << "Press any key to return to the main menu" << endl;
-        cin.get();
+        ending_called = true;
+        //cout << "Congratulations! You beat the game!" << endl;
+        if (skill < skill_threshold){
+            // Defeat ending
+            cout << "\nPress enter to continue..." << endl;
+            cin.get();
+            currentLocation = defeat;
+        }
+        else{
+            // Success ending
+            cout << "\nPress enter to continue..." << endl;
+            cin.get();
+            currentLocation = success;
+        }
     }
 }
 
@@ -400,7 +446,7 @@ void GameGraph::howFarToBoss()
 {
     routeToLocation routeToBoss;
     routeToBoss = shortestRouteToDestination(currentLocation->title, "Well");
-    if (routeToBoss.distance < 3)
+    if (routeToBoss.distance < 3 && routeToBoss.distance != 0)
     {
         cout << "                           " << "Boss is " << routeToBoss.distance;
         if (routeToBoss.distance ==1)

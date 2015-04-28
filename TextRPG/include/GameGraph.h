@@ -53,16 +53,18 @@ class GameGraph
         void movePlayer(std::string input); // TBD, changes current location and marks vertex as visited
         void endGameSequences();
         void howFarToBoss();
-
+        void connectRemainingPaths(); // Connects edges that were made before the vertex existed
         // Public variables
         bool quit; // Set to true if the player wants to quit
+        bool boss_room_random;
+        int skill_threshold;
+        int timeleft;
     protected:
     private:
-        void connectRemainingPaths(); // Connects edges that were made before the vertex existed
-
         room * currentLocation; // Pointer to the area where the player is currently located
+        room * bossroom;
         int skill;
-        int timeleft;
+        bool ending_called;
         std::vector<room*> areas; //vector containing all areas
         std::vector<placeholder> unconnected; // Vector containing edges that have yet to be connected
 };
