@@ -1,10 +1,10 @@
-# Final Project: Text-based RPG
+# Final Project: Spirits of Nordsjaelland Game
 
 by Cade Haley and Mitch Block
 
 Project Summary:
 ===
-A text-based RPG game that relies on graphs (and possibly other data structures) to function. The program takes user input and uses it to navigate to different nodes in the graph connected by adjacent vertices, and local variables to store skill data and game progress. Using a graph-based method of assembling the game allows for a lot of flexibility in adding rooms and changing output, and even allows for potential randomly generated maps.
+A text-based RPG game that relies on graphs (and other data structures) to function. The program takes user input and uses it to navigate to different nodes in the graph connected by adjacent vertices, and local variables to store skill data and game progress. Using a graph-based method of assembling the game allows for a lot of flexibility in adding rooms and changing output, and even allows for potential randomly generated maps.
 
 Dependencies:
 ===
