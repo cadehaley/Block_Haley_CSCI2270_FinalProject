@@ -23,6 +23,7 @@ GameGraph::GameGraph()
 
     boss_room_random = false;
     bossroom = NULL;
+    hasBuilt = false;
     ending_called = false;
 }
 
@@ -40,124 +41,169 @@ GameGraph::~GameGraph()
     Post-conditions: All edges are added along with respective vertices and all information
     Dependencies: addArea, addPathToArea, connectRemainingEdges
 */
-void GameGraph::readAndBuild(string filename){
+void GameGraph::readAndBuild(string filename)
+{
     ifstream infile;
-	infile.open(filename.c_str());
-	string line;
+    infile.open(filename.c_str());
+    string line;
 
     bool duplicate_found = false;
     int numberize = 0;
-	// Infile Modes, for telling if a line is
-	bool adding_adjacent = false;
-	bool adjacent_added = false;
-	int rowmode = 0;
-	int adjacentmode = 0;
-	string adjTitle;
-	string adjDesc;
-	string adjKey;
+    // Infile Modes, for telling if a line is
+    bool adding_adjacent = false;
+    bool adjacent_added = false;
+    int rowmode = 0;
+    int adjacentmode = 0;
+    string adjTitle;
+    string adjDesc;
+    string adjKey;
 
-	if (infile.is_open())
-	{
-		while ( getline (infile, line)){
+    if (infile.is_open())
+    {
+        while ( getline (infile, line))
+        {
             rowmode++; // Increment the row mode
             stringstream one(line); // Establish for case 3
-			if (line == "@@" || line[0] == '#' || line == ""){ // Reset the action to 0 (do nothing) if ** or # is used
+            if (line == "@@" || line[0] == '#' || line == "")  // Reset the action to 0 (do nothing) if ** or # is used
+            {
                 rowmode = 0;
                 duplicate_found = false;
-			}
-            if (line == "&&"){
+            }
+            if (line == "&&")
+            {
                 rowmode = -100; //Reset rowmode
                 adjacentmode = 0;
                 adding_adjacent = true; // Go into "loop" that adds adjacent verts
             }
-            switch (rowmode){
-                case 1: // For the first line, create the vertex
-                    duplicate_found = addArea(line);
-                    if (duplicate_found) // If there's already an existing vertex, skip this vertex entry entirely
-                        rowmode = -100;
-                    else
-                        cout << line << " created" << endl;
+            switch (rowmode)
+            {
+            case 1: // For the first line, create the vertex
+                duplicate_found = addArea(line);
+                if (duplicate_found) // If there's already an existing vertex, skip this vertex entry entirely
+                    rowmode = -100;
+                else
+                    cout << line << " created" << endl;
+                break;
+            case 2: // For the second line, associate the description
+                areas[areas.size()-1]->description = line;
+                break;
+            case 3: // 3rd line, convert to int, associate skill points
+                if (!(one >> numberize))
+                {
+                    numberize = 999;   // Convert the line to a number like this (using sstream), because "stoi" tends to be finnicky
+                }
+                areas[areas.size()-1]->skill = numberize;
+                break;
+            case 4: // 4th line, associate an action for a newly visited room
+                areas[areas.size()-1]->action = line;
+                break;
+            case 5: // 5th line, room type
+                if (line == "s") // If it's the starting room, set the current room to this vert
+                    currentLocation = areas[areas.size()-1];
+                if (line == "b")
+                    bossroom = areas[areas.size()-1]; // If it's the boss room, save this vertex for later
+                break;
+            // Otherwise, just a regular room
+            default:
+                break;
+            }
+            if (adding_adjacent && !duplicate_found)  // If you ran across && and it's not a duplicate (that's supposed to be skipped)
+            {
+                switch (adjacentmode)
+                {
+                case 1: // Create variables before loading into function
+                    adjTitle = line;
                     break;
-                case 2: // For the second line, associate the description
-                    areas[areas.size()-1]->description = line;
+                case 2:
+                    adjDesc = line;
                     break;
-                case 3: // 3rd line, convert to int, associate skill points
-                    if (!(one >> numberize)){ numberize = 999;} // Convert the line to a number like this (using sstream), because "stoi" tends to be finnicky
-                    areas[areas.size()-1]->skill = numberize;
+                case 3:
+                    adjKey = line;
+                    cout << "Adding adjacent -----" << endl;
+                    //cout << areas[areas.size()-1]->title << " + " << adjTitle << " + " << adjDesc << " + " << adjKey << endl;
+                    adjacent_added = addPathToArea(areas[areas.size()-1]->title, adjTitle, adjDesc, adjKey);
+                    if (!adjacent_added)
+                    {
+                        cout << "   Destination non-existent, adding path later" << endl;
+                        // If no ending area exists yet (or at all), add to "unconnected"
+                        placeholder orphan;
+                        orphan.starting = areas[areas.size()-1]->title;
+                        orphan.destination = adjTitle;
+                        orphan.description = adjDesc;
+                        orphan.key = adjKey;
+                        unconnected.push_back(orphan);
+                    }
+                    adding_adjacent = false;
                     break;
-                case 4: // 4th line, associate an action for a newly visited room
-                    areas[areas.size()-1]->action = line;
-                    break;
-                case 5: // 5th line, room type
-                    if (line == "s") // If it's the starting room, set the current room to this vert
-                        currentLocation = areas[areas.size()-1];
-                    if (line == "b")
-                        bossroom = areas[areas.size()-1]; // If it's the boss room, save this vertex for later
-                    break;
-                    // Otherwise, just a regular room
                 default:
                     break;
-            }
-            if (adding_adjacent && !duplicate_found){ // If you ran across && and it's not a duplicate (that's supposed to be skipped)
-                switch (adjacentmode){
-                    case 1: // Create variables before loading into function
-                        adjTitle = line;
-                        break;
-                    case 2:
-                        adjDesc = line;
-                        break;
-                    case 3:
-                        adjKey = line;
-                        cout << "Adding adjacent -----" << endl;
-                        //cout << areas[areas.size()-1]->title << " + " << adjTitle << " + " << adjDesc << " + " << adjKey << endl;
-                        adjacent_added = addPathToArea(areas[areas.size()-1]->title, adjTitle, adjDesc, adjKey);
-                        if (!adjacent_added){
-                            cout << "   Destination non-existent, adding path later" << endl;
-                            // If no ending area exists yet (or at all), add to "unconnected"
-                            placeholder orphan;
-                            orphan.starting = areas[areas.size()-1]->title;
-                            orphan.destination = adjTitle;
-                            orphan.description = adjDesc;
-                            orphan.key = adjKey;
-                            unconnected.push_back(orphan);
-                        }
-                        adding_adjacent = false;
-                        break;
-                    default:
-                        break;
                 }
                 adjacentmode++;
             }
-		}
-		infile.close();
-		cout << " -- Connecting remaining paths -- " << endl;
-		connectRemainingPaths(); // After all vertices have been made, connect the rest of the edges
-		cout << " ...done\n\n";
-		if (currentLocation == NULL){
+        }
+        infile.close();
+        cout << " -- Connecting remaining paths -- " << endl;
+        connectRemainingPaths(); // After all vertices have been made, connect the rest of the edges
+        cout << " ...done\n\n";
+        if (currentLocation == NULL)
+        {
             cout << "Warning: No starting room found in file" << endl;
             currentLocation = areas[0];
-		}
+        }
         else
             cout << "Starting room:  " << currentLocation->title << endl;
 
-		// Attach the boss room
-		if (bossroom != NULL && boss_room_random){
+        // Attach the boss room
+        if (bossroom != NULL && boss_room_random)
+        {
             cout <<"    ... Assigning boss room RANDOMLY..." << endl;
             int randindex = rand() % areas.size();
             string boss_desc = "Your final enemy is very near, at the " + areas[randindex]->title + ". If you are ready to fight, type 'boss'";
             string boss_key = "boss";
             addPathToArea(areas[randindex]->title, bossroom->title, boss_desc, boss_key);
-		}
-		if (bossroom == NULL){
+        }
+        if (bossroom == NULL)
+        {
             cout << "Warning: No boss room found in file" << endl;
             bossroom = areas[areas.size()-1];
-		}
-	}
-	else{
+        }
+        hasBuilt = true;
+    }
+    else
+    {
         cout << "File not open" << endl;
-	}
+    }
 
 }
+
+
+
+void GameGraph::reBuildMap(string fileName)
+{
+
+    if(!hasBuilt)
+    {
+        cout << "Build map first" << endl;
+        cout << "\nPress any key to continue" << endl;
+        cin.get();
+        return;
+    }
+
+    //
+    timeleft = 20; // Time limit for room traversals
+    skill = 0;
+    boss_room_random = false;
+    bossroom = NULL;
+    hasBuilt = false;
+    ending_called = false;
+    areas.clear(); //Clears Areas so we can rebuild
+    readAndBuild(fileName);
+
+    cout << "Map Reset" << endl;
+    cout << "\nPress any key to continue" << endl;
+    cin.get();
+}
+
 
 /*
     bool addArea(string name), returns true if an existing vertex is already found
@@ -185,7 +231,8 @@ bool GameGraph::addArea(std::string name)
         areas.push_back(newRoom);
         return false;
     }
-    else{
+    else
+    {
         return true;
     }
 }
@@ -246,14 +293,16 @@ void GameGraph::lookAtMap()
 
 
     cout << currentLocation->description << " ";
-    if (!currentLocation->action_done){
+    if (!currentLocation->action_done)
+    {
         cout << currentLocation->action << endl;
         currentLocation->action_done = true;
     }
     else
         cout << endl;
 
-    if (ending_called){
+    if (ending_called)
+    {
         cout << "\nPress any key to continue" << endl;
         cin.get();
         quit = true;
@@ -337,21 +386,26 @@ routeToLocation GameGraph::shortestRouteToDestination(std::string startArea, std
     Pre-conditions: Graph with paths for each area already established
     Post-conditions: Moves player's current location, updates skill points and time left
 */
-void GameGraph::movePlayer(string input){
+void GameGraph::movePlayer(string input)
+{
     bool moved = false;
     // Loop through adjacent verts, seeing if the input matches
-    for (int i = 0; i<currentLocation->adj.size(); i++){
-        if (input == currentLocation->adj[i].key){
+    for (int i = 0; i<currentLocation->adj.size(); i++)
+    {
+        if (input == currentLocation->adj[i].key)
+        {
             currentLocation = currentLocation->adj[i].r;
             moved = true;
             break;
         }
     }
-    if (moved){
+    if (moved)
+    {
         // update skill points
-        if (currentLocation->action_done == false){
+        if (currentLocation->action_done == false)
+        {
             skill += currentLocation->skill;
-            }
+        }
         // Update time limit
         timeleft -= 1;
     }
@@ -365,10 +419,12 @@ void GameGraph::movePlayer(string input){
     Post-conditions: Adds all edges from the "unconnected" vector to the adjVert vectors of respective areas
     Dependencies: addPathToArea
 */
-void GameGraph::connectRemainingPaths(){
+void GameGraph::connectRemainingPaths()
+{
     bool reconnected;
     // For each entry in the vector of placeholders
-    for (int i = 0; i<unconnected.size(); i++){
+    for (int i = 0; i<unconnected.size(); i++)
+    {
         // Connect an edge
         reconnected = addPathToArea(unconnected[i].starting, unconnected[i].destination, unconnected[i].description, unconnected[i].key);
         if (!reconnected)
@@ -390,7 +446,8 @@ void GameGraph::endGameSequences()
     room * timeout = NULL;
 
     // Attach pointers to the 3 scenarios
-    for (int i = 0; i<areas.size(); i++){
+    for (int i = 0; i<areas.size(); i++)
+    {
         if (areas[i]->title == "Success")
             success = areas[i];
         if (areas[i]->title == "Defeat")
@@ -399,8 +456,10 @@ void GameGraph::endGameSequences()
             timeout = areas[i];
     }
     // Error checking
-    if (success == NULL || defeat == NULL || timeout == NULL){
+    if (success == NULL || defeat == NULL || timeout == NULL)
+    {
         cout << "WARNING: Your game is hella broken (one or more of your ending scenarios is missing), so by default, you win." << endl;
+        //Gave me hella luls
         quit = true;
         return;
     }
@@ -421,13 +480,15 @@ void GameGraph::endGameSequences()
     {
         ending_called = true;
         //cout << "Congratulations! You beat the game!" << endl;
-        if (skill < skill_threshold){
+        if (skill < skill_threshold)
+        {
             // Defeat ending
             cout << "\nPress enter to continue..." << endl;
             cin.get();
             currentLocation = defeat;
         }
-        else{
+        else
+        {
             // Success ending
             cout << "\nPress enter to continue..." << endl;
             cin.get();

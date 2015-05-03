@@ -59,12 +59,14 @@ class GameGraph
         bool boss_room_random;
         int skill_threshold;
         int timeleft;
+        void reBuildMap(std::string filename);
     protected:
     private:
         room * currentLocation; // Pointer to the area where the player is currently located
         room * bossroom;
         int skill;
         bool ending_called;
+        bool hasBuilt;
         std::vector<room*> areas; //vector containing all areas
         std::vector<placeholder> unconnected; // Vector containing edges that have yet to be connected
 };
