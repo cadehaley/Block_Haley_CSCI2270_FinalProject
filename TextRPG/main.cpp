@@ -130,7 +130,7 @@ int main(int argc, const char * argv[]) {
                 }
                 break;
             case 4: //
-
+                g.reBuildMap(filename);
                 break;
 
             case 5: // Quit
@@ -152,7 +152,7 @@ void displayMenu(){
     cout << "1. Build game map" << endl;
     cout << "2. Play game" << endl;
     cout << "3. Go to options" << endl;
-    cout << "4. Function 4 (Empty)" << endl;
+    cout << "4. Restart Game" << endl;
     cout << "5. Quit" << endl;
 }
 
