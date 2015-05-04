@@ -196,7 +196,9 @@ void GameGraph::reBuildMap(string fileName)
     bossroom = NULL;
     hasBuilt = false;
     ending_called = false;
+
     areas.clear(); //Clears Areas so we can rebuild
+    unconnected.clear();
     readAndBuild(fileName);
 
     cout << "Map Reset" << endl;
