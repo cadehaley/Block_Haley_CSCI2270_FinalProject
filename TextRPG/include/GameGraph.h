@@ -38,6 +38,12 @@ struct placeholder{ // Forms a placeholder for edges made before their destinati
     std::string key;
 };
 
+struct bossFightActions
+{
+    std::string bossAction;
+    std::string responseToAction;
+};
+
 class GameGraph
 {
     public:
@@ -62,6 +68,8 @@ class GameGraph
         void reBuildMap(std::string filename);
     protected:
     private:
+        void bossFight();
+        int randomNumberGenerator(int rangeMax);
         room * currentLocation; // Pointer to the area where the player is currently located
         room * bossroom;
         int skill;
