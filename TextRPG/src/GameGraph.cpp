@@ -8,6 +8,8 @@
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
+#include <random>
+#include <time.h>
 
 using namespace std;
 
@@ -522,3 +524,91 @@ void GameGraph::howFarToBoss()
         }
     }
 }
+
+void GameGraph::bossFight()
+{
+    clock_t time;
+    string input;
+    int actionCount;
+    int seconds_elapsed;
+    bool tryAgain = true;
+    bossFightActions tempAction;
+
+    bossFightActions dodge;
+            dodge.bossAction = "The Spirit swings his dangerous, translucent fist at your face. DODGE";
+            dodge.responseToAction = "d";  // "d" to dodge
+
+    bossFightActions attack;
+            attack.bossAction = "You see an opening to strike back against the monster. ATTACK";
+            attack.responseToAction = "f";      // "a" to attack
+
+    bossFightActions jump;
+            jump.bossAction = "The Spirit swings at your knee caps, you should JUMP";
+            jump.responseToAction = " ";    //spacebar to jump
+
+    bossFightActions actionsArray[3] = {dodge, attack, jump};
+
+    cout << "\n \n" << "The stage is set for a man vs. spirit battle of epic proportions." << endl;
+    cout << "The battle will be ferocious but quick. Time is of the essence and speed is a factor." << endl;
+    cout << "The faster you respond, the greater  the chance of victory." << endl;
+    cout << "\n" <<   "The rules are simple: Press spacebar to jump, d to dodge, and f to attack. You must also press enter once after a key is hit.  \n \t inaccurate entries will not count!!!" << endl;
+    cout << "\n" << "Press Enter if you are READY TO FIGHT" << "\n \n " << endl;
+
+    getline(cin, input);
+
+    while(tryAgain == true)
+    {
+
+    time = clock();
+
+    do{
+
+            tempAction = actionsArray[randomNumberGenerator(2)]; //passing 2 as a parameter will generate one of three numbers randomly; 0, 1, 2. The indices of the array.
+            cout << tempAction.bossAction << "\n" << endl;
+
+            getline(cin, input);
+
+            cout << "\n" << endl;
+
+            if(input == tempAction.responseToAction) actionCount++;
+
+            seconds_elapsed = (clock() - time) / CLOCKS_PER_SEC;
+
+    }   while (seconds_elapsed <= 10);
+
+
+
+
+    if(actionCount > 12)
+    {
+        cout << "YOU HAVE WON THE BATTLE!" << endl;
+    }
+    else
+    {
+        cout << "You may have had what it takes but your speed and precision were found lacking. You are no hero today. \n" << endl;
+        cout << "Most heroes do not get to go back in time to fight a lost battle again. Today is YOUR lucky day warrior. " << endl;
+
+    }
+
+    cout << "Would you like to try the Boss Fight Again? \n" << endl;
+    cout << "y for yes" << "\n" << "n for no" << endl;
+    getline(cin, input);
+
+    if(input == "y");
+    else tryAgain = false;
+
+    }
+
+    return;
+}
+
+int GameGraph::randomNumberGenerator(int rangeMax)
+{
+
+    static default_random_engine generator;     // include <random> used for this functionality. rand and srand not used because a modulo operation would be needed to get the random number
+    uniform_int_distribution <int> distribution (0, rangeMax);              // in the range desired. RAND implementation favors lower indices, aka not as random
+    int randNum = distribution(generator);                  //random engine is the seed generator with distribution declaring all values in the range are equally as likely to be picked. upper limit taken as parameter
+
+    return randNum;
+}
+
