@@ -21,7 +21,7 @@ Mitch Block
 
 Contributors:
 ===
-(none)
+CodyMattern and Codewalker
 
 Open issues/bugs:
 ===

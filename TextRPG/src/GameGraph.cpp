@@ -445,6 +445,8 @@ void GameGraph::connectRemainingPaths()
 */
 void GameGraph::endGameSequences()
 {
+    bool won = true;
+
     room * success = NULL;
     room * defeat = NULL;
     room * timeout = NULL;
@@ -490,13 +492,22 @@ void GameGraph::endGameSequences()
             cout << "\nPress enter to continue..." << endl;
             cin.get();
             currentLocation = defeat;
+            /*
+            won = bossFight(); // Initiate the smackdown
+            */
         }
         else
         {
             // Success ending
             cout << "\nPress enter to continue..." << endl;
             cin.get();
-            currentLocation = success;
+            /*
+            won = bossFight();
+            */
+            if (won)
+                currentLocation = success;
+            else
+                currentLocation = defeat;
         }
     }
 }
@@ -524,12 +535,20 @@ void GameGraph::howFarToBoss()
         }
     }
 }
+/*
 
-void GameGraph::bossFight()
+Post-conditions: returns whether the player won or lost
+*/
+
+bool GameGraph::bossFight()
 {
+    bool won;
+    int timelimit = 10; // Modify for boss fight length
+    int actionthreshold = 12; // Modify for minimum actions
+
     clock_t time;
     string input;
-    int actionCount;
+    int actionCount = 0;
     int seconds_elapsed;
     bool tryAgain = true;
     bossFightActions tempAction;
@@ -550,8 +569,8 @@ void GameGraph::bossFight()
 
     cout << "\n \n" << "The stage is set for a man vs. spirit battle of epic proportions." << endl;
     cout << "The battle will be ferocious but quick. Time is of the essence and speed is a factor." << endl;
-    cout << "The faster you respond, the greater  the chance of victory." << endl;
-    cout << "\n" <<   "The rules are simple: Press spacebar to jump, d to dodge, and f to attack. You must also press enter once after a key is hit.  \n \t inaccurate entries will not count!!!" << endl;
+    cout << "The faster you respond, the greater the chance of victory." << endl;
+    cout << "\n" <<   "The rules are simple: Press spacebar to jump, d to dodge, and f to attack. You must also press enter once after each key is hit.  \n \t inaccurate entries will not count!!!" << endl;
     cout << "\n" << "Press Enter if you are READY TO FIGHT" << "\n \n " << endl;
 
     getline(cin, input);
@@ -573,21 +592,25 @@ void GameGraph::bossFight()
             if(input == tempAction.responseToAction) actionCount++;
 
             seconds_elapsed = (clock() - time) / CLOCKS_PER_SEC;
+            cout << "BOSS DAMAGE: " << actionCount << "/" << actionthreshold << endl;
+            cout << "Time remaining: " << timelimit - seconds_elapsed << endl;
 
-    }   while (seconds_elapsed <= 10);
+    }   while (seconds_elapsed <= timelimit);
 
 
 
 
-    if(actionCount > 12)
+    if(actionCount > actionthreshold)
     {
         cout << "YOU HAVE WON THE BATTLE!" << endl;
+        won = true;
     }
     else
     {
-        cout << "You may have had what it takes but your speed and precision were found lacking. You are no hero today. \n" << endl;
-        cout << "Most heroes do not get to go back in time to fight a lost battle again. Today is YOUR lucky day warrior. " << endl;
 
+        cout << "You may have had what it takes but your speed and precision were found lacking. You are no hero today. \n" << endl;
+        cout << "Most heroes do not get to go back in time to fight a lost battle again. Today luck is on your side. " << endl;
+        won = false;
     }
 
     cout << "Would you like to try the Boss Fight Again? \n" << endl;
@@ -599,7 +622,7 @@ void GameGraph::bossFight()
 
     }
 
-    return;
+    return won;
 }
 
 int GameGraph::randomNumberGenerator(int rangeMax)
